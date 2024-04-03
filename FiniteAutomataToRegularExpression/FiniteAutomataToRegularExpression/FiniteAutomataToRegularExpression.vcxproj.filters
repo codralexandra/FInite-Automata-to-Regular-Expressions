@@ -25,11 +25,23 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FiniteAutomata.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MyClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Transition.cpp">
+      <Filter>Source Files\MyClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Regex.cpp">
+      <Filter>Source Files\MyClasses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FiniteAutomata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Regex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

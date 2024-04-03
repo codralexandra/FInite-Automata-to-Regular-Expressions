@@ -129,9 +129,13 @@
   <ItemGroup>
     <ClCompile Include="FiniteAutomata.cpp" />
     <ClCompile Include="FiniteAutomataToRegularExpression.cpp" />
+    <ClCompile Include="Regex.cpp" />
+    <ClCompile Include="Transition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FiniteAutomata.h" />
+    <ClInclude Include="Regex.h" />
+    <ClInclude Include="Transition.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="automata.in" />
