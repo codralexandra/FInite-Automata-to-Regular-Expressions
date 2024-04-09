@@ -8,15 +8,18 @@ int main()
     automata = automata.readAutomata("automata.in");
     automata.printAutomata();
 
-    /*Regex expr1("b*a");
-    Regex expr2("a+bb*a");
-    Regex expr3("~b*a");
-    
-    expr2 = expr2.KleeneStar();
-    expr1 = expr1.Concatenate(expr2);
-    expr1.printRegex();
+    std::cout << std::endl;
 
-    expr3 = expr3.removeLambdas();
-    expr3.printRegex();*/
+    Regex regularExpr = automata.getRegularExpression();
+
+    std::cout << "Regular expression: ";
+    regularExpr.printRegex();
+
+    //tests:
+    //(pt al doilea exemplu imi accepta cuv vid doar pt unele expresii for some reason)
+    std::string word = "";
+    if(regularExpr.checkWord(word))
+        std::cout<<"True";
+
 }
 
