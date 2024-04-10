@@ -289,6 +289,9 @@ void FiniteAutomata::stateElimination()
 				newLabel = pq;
 			}
 
+			if (newLabel.getExpression().size() == 0)
+				newLabel.setExpression("~");
+
 			addTransition(Transition(p, newLabel, q));
 		}
 

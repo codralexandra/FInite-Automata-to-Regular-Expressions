@@ -62,8 +62,21 @@ Regex Regex::Union(Regex expression2)
 {
     std::string newExpr;
 
-    newExpr = regularExpression + "+" + expression2.regularExpression;
-
+    if (regularExpression == "~" && expression2.regularExpression == "~")
+        return Regex("~");
+    if (regularExpression == "~")
+    {
+        Regex newExpr = expression2.regularExpression;
+        newExpr = newExpr.KleeneStar();
+        return newExpr;
+    }
+    if (expression2.regularExpression == "~")
+    {
+        Regex newExpr = regularExpression;
+        newExpr = newExpr.KleeneStar();
+        return newExpr;
+    }
+    newExpr = regularExpression + "|" + expression2.regularExpression;
     return Regex(newExpr);
 }
 
@@ -82,7 +95,7 @@ Regex Regex::removeLambdas()
 
 bool Regex::checkWord(std::string word)
 {
-    std::replace(regularExpression.begin(), regularExpression.end(), '+', '|');
+    //std::replace(regularExpression.begin(), regularExpression.end(), '+', '|');
     std::regex regex_pattern(regularExpression);
 
     if (std::regex_match(word, regex_pattern))
